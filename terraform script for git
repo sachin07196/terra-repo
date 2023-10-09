@@ -1,0 +1,18 @@
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
+  }
+}
+provider "github" {
+  token = "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"
+}
+
+resource "github_repository" "terra1" {
+  name        = "terra-repo"
+  description = "My awesome codebase"
+
+  visibility = "public"
+}
